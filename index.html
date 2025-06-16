@@ -289,12 +289,16 @@
         .organizer-card {
             background: linear-gradient(to bottom right, #ffffff, #f9f6fc);
             border-radius: 10px;
-            padding: 20px;
+            padding: 25px 20px;
             border-left: 4px solid #6a0dad;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
         
         .organizer-card:hover {
@@ -313,6 +317,19 @@
             border-radius: 0 0 0 100%;
         }
         
+        .organizer-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6a0dad, #4b0082);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 2.5rem;
+        }
+        
         .organizer-card h3 {
             color: #4b0082;
             margin-top: 0;
@@ -323,19 +340,30 @@
         .organizer-title {
             color: #7e57c2;
             font-weight: 500;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             display: block;
             font-size: 0.95rem;
+            line-height: 1.5;
         }
         
         .organizer-email {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             background-color: #f0e8fa;
             color: #6a0dad;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
             margin-top: 10px;
+            transition: all 0.3s;
+            text-decoration: none;
+            gap: 8px;
+        }
+        
+        .organizer-email:hover {
+            background: linear-gradient(135deg, #6a0dad, #4b0082);
+            color: white;
+            transform: translateY(-2px);
         }
         
         /* 日程表 - 移动端优化 */
@@ -651,8 +679,7 @@
             }
             
             .organizer-card {
-                padding: 18px;
-                text-align: center; /* 添加居中 */
+                padding: 20px 15px;
             }
             
             .date-card {
@@ -665,71 +692,6 @@
             
             .social-links {
                 gap: 12px;
-            }
-            
-            /* 移动端文本优化 */
-            p {
-                font-size: 0.95rem;
-                line-height: 1.7;
-                text-align: center;
-            }
-            
-            li {
-                padding-left: 15px;
-                font-size: 0.95rem;
-                line-height: 1.6;
-                text-align: left; /* 列表项保持左对齐 */
-            }
-            
-            h2, h3 {
-                text-align: center;
-            }
-            
-            /* 组织者卡片中的段落居中 */
-            .organizer-card p {
-                text-align: center;
-            }
-            
-            /* 程序委员会成员居中 */
-            .pc-member {
-                text-align: center;
-            }
-            
-            /* 列表项居中 */
-            ul, ol {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                padding-left: 0;
-            }
-            
-            /* 修复列表项圆点位置 */
-            li {
-                width: 90%;
-                text-align: center;
-                padding-left: 0;
-                list-style-position: inside;
-            }
-            
-            li:before {
-                display: none; /* 隐藏自定义圆点 */
-            }
-            
-            ul {
-                list-style-type: disc;
-                color: #6a0dad; /* 设置圆点颜色 */
-            }
-            
-            ol {
-                list-style-type: decimal;
-                color: #6a0dad; /* 设置数字颜色 */
-            }
-            
-            /* 段落中的链接居中 */
-            p a {
-                display: inline-block;
-                text-align: center;
-                width: 100%;
             }
         }
         
@@ -758,10 +720,6 @@
                 font-size: 1.15rem;
             }
             
-            p, li {
-                font-size: 0.95rem;
-            }
-            
             .footer-logo {
                 font-size: 22px;
             }
@@ -774,6 +732,12 @@
             .date-ribbon {
                 padding: 6px 16px;
                 font-size: 0.8rem;
+            }
+            
+            .organizer-avatar {
+                width: 85px;
+                height: 85px;
+                font-size: 2rem;
             }
         }
         
@@ -855,24 +819,22 @@
                 <div class="organizer-card">
                     <h3>Shanxiang Lyu</h3>
                     <span class="organizer-title">Jinan University, China</span>
-                    <p>Dr. Lyu received the Ph.D. degree from Imperial College London in 2018. He is currently an Associate Professor with the College of Cyber Security, Jinan University, and Director of the Laboratory of Quantum and Post-Quantum Cryptography.</p>
-                    <p>Recipient of the Guangdong Provincial Excellent Young Talents Program and the 2021 CIE Information Theory Society Yong-Star Award.</p>
-                    <a href="mailto:lsx07@jnu.edu.cn" class="organizer-email"><i class="fas fa-envelope"></i> lsx07@jnu.edu.cn</a>
+                    <a href="mailto:lsx07@jnu.edu.cn" class="organizer-email">
+                        <i class="fas fa-envelope"></i> lsx07@jnu.edu.cn
+                    </a>
                 </div>
                 
                 <div class="organizer-card">
                     <h3>Ling Liu</h3>
                     <span class="organizer-title">Guangzhou Institute of Technology, Xidian University, China</span>
-                    <p>Dr. Liu received the PhD degree from Imperial College London in 2015. Former postdoctoral researcher at Imperial College London and worked at Huawei Technologies on 5G polar codes.</p>
-                    <p>Published over 30 papers in journals and conferences, recipient of the "Imperial-CSC" full scholarship and IEEE 2021 WCSP best paper award.</p>
-                    <a href="mailto:lingliu@xidian.edu.cn" class="organizer-email"><i class="fas fa-envelope"></i> lingliu@xidian.edu.cn</a>
+                    <a href="mailto:lingliu@xidian.edu.cn" class="organizer-email">
+                        <i class="fas fa-envelope"></i> lingliu@xidian.edu.cn
+                    </a>
                 </div>
                 
                 <div class="organizer-card">
                     <h3>Cong Ling</h3>
                     <span class="organizer-title">Imperial College London, UK</span>
-                    <p>Professor of Information Theory and Cryptography at Imperial College London. His research focuses on lattices and their applications to coding and cryptography, and their connections with number theory and quantum information.</p>
-                    <p>Extensive contributions to lattice-based coding theory and cryptography with numerous publications in top-tier venues.</p>
                 </div>
             </div>
         </section>
@@ -979,7 +941,7 @@
                             <td>16:40–16:45</td>
                             <td>Concluding Remarks</td>
                             <td>Organizers</td>
-                        </tr>
+        </tr>
                     </tbody>
                 </table>
             </div>
@@ -1153,12 +1115,6 @@
                     }
                 });
             }
-            
-            // 添加日期卡片动画
-            const dateCards = document.querySelectorAll('.date-card');
-            dateCards.forEach((card, index) => {
-                card.style.animationDelay = `${0.1 * index}s`;
-            });
         });
     </script>
 </body>
